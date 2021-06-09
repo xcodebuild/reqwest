@@ -1,3 +1,6 @@
+# What's fixed
+
+Fix `globalThis` so you can it in Vite.
 # It's AJAX
 
 All over again. Includes support for xmlHttpRequest, JSONP, CORS, and CommonJS Promises A.
