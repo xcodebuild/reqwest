@@ -4,7 +4,14 @@
   else context[name] = definition()
 }('reqwest', this, function () {
 
-  var context = this
+  var getGlobal = function () {
+    if (typeof self !== 'undefined') { return self }
+    if (typeof window !== 'undefined') { return window }
+    if (typeof global !== 'undefined') { return global }
+    throw new Error('unable to locate global object')
+  }
+
+  var context = getGlobal()
 
   if ('document' in context) {
     var doc = document
